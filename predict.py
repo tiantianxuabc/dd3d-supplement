@@ -83,7 +83,7 @@ def main(cfg):
     model = build_model(cfg)
  
 
-    checkpoint_file = '/home/phj/Data/dd3d-supplement/demo/model/model_final2.pth' 
+    checkpoint_file = './demo/model/model_final2.pth' 
     LOG.info("model loading from {}" .format(checkpoint_file))
     Checkpointer(model).load(checkpoint_file)
    
@@ -98,21 +98,17 @@ def main(cfg):
             stack.enter_context(inference_context(model))
         stack.enter_context(torch.no_grad())        
 
-        file_name = "/home/phj/Data/dd3d-supplement/demo/images-self/6_1654579942698899000.bmp"
-        # file_name = "/home/phj/Data/dd3d-supplement/demo/images/000041.png"
+        file_name = "./demo/images/000041.png"
         file_img = cv2.imread(file_name)   
         file_img = file_img[:, :, ::-1]
         LOG.info("image shape {}".format(file_img.shape))
         img_tensor = torch.from_numpy(file_img.copy())
         img_tensor = img_tensor.permute(2, 0, 1)
+        
         img_intrinsics = torch.Tensor([
-                [ 1818.24, 0, 973.382],
-                [0, 1817.57, 563.979],
+                [ 721.5377, 0, 609.5593],
+                [0, 721.5377, 172.854],
                 [0, 0, 1]])
-        # img_intrinsics = torch.Tensor([
-        #         [ 721.5377, 0, 609.5593],
-        #         [0, 721.5377, 172.854],
-        #         [0, 0, 1]])
         img_extrinsics = Pose( wxyz=np.float32([0.500, -0.500, 0.504, -0.496]), tvec = np.float32([0.30, -0.07, -0.06]))
         input = {}
         input["intrinsics"] = img_intrinsics
