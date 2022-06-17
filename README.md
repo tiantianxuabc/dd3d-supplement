@@ -6,14 +6,10 @@
 
 Official [PyTorch](https://pytorch.org/) implementation of _DD3D_: [**Is Pseudo-Lidar needed for Monocular 3D Object detection? (ICCV 2021)**](https://arxiv.org/abs/2108.06417),
 
-### Datasets
-
-By default, datasets are assumed to be downloaded in `/data/datasets/<dataset-name>` (can be a symbolic link). The dataset root is configurable by [`DATASET_ROOT`](https://github.com/TRI-ML/dd3d/blob/main/configs/defaults.yaml#L35).
 
 #### KITTI
 
-The KITTI 3D dataset used in our experiments can be downloaded from the [KITTI website](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d).
-For convenience, we provide the standard splits used in [3DOP](https://xiaozhichen.github.io/papers/nips15chen.pdf) for training and evaluation:
+dataset: https://pan.baidu.com/s/1zPgRvDHgyOkI5ZtKkM2jiQ 提取码: scwr  
 
 The dataset must be organized as follows:
 
@@ -83,10 +79,6 @@ To validate the entire training loop (including [evaluation](./configs/evaluator
 ```bash
 ./train.py +experiments=dd3d_kitti_dla34
 ```
-
-|                         experiment                          | backbone | train mem. (GB) | traiqn time (hr) |                                               train log                                                | Box AP (%) | BEV AP (%) |                                                  download                                                   |
-| :---------------------------------------------------------: | :------: | :-------------: | :--------------: | :----------------------------------------------------------------------------------------------------: | :--------: | :--------: | :---------------------------------------------------------------------------------------------------------: |
-| [config](configs/experiments/dd3d_kitti_dla34_overfit.yaml) |  DLA-34  |        6        |       0.25       | [log](https://tri-ml-public.s3.amazonaws.com/github/dd3d/experiments/dla34-kitti-overfit/logs/log.txt) |   84.54    |   88.83    | [model](https://tri-ml-public.s3.amazonaws.com/github/dd3d/experiments/dla34-kitti-overfit/model_final.pth) |
 
 ### Predict
 
