@@ -9,7 +9,6 @@ Official [PyTorch](https://pytorch.org/) implementation of _DD3D_: [**Is Pseudo-
 
 #### KITTI
 
-dataset: https://pan.baidu.com/s/1zPgRvDHgyOkI5ZtKkM2jiQ 提取码: scwr  
 
 The dataset must be organized as follows:
 
@@ -62,9 +61,6 @@ The DD3D models pre-trained on dense depth estimation using DDAD15M can be downl
 | V2-99 | [model](https://tri-ml-public.s3.amazonaws.com/github/dd3d/pretrained/depth_pretrained_v99-3jlw0p36-20210423_010520-model_final-remapped.pth) |
 | DLA34 | (https://pan.baidu.com/s/1vpncowhJjhivGNrqMLSTYg 提取码: 4f6q) |
 
-#### (Optional) Eigen-clean subset of KITTI raw.
-
-To train our Pseudo-Lidar detector, we curated a new subset of KITTI (raw) dataset and use it to fine-tune its depth network. This subset can be downloaded [here](https://tri-ml-public.s3.amazonaws.com/github/dd3d/eigen_clean.txt). Each row contains left and right image pairs. The KITTI raw dataset can be download [here](http://www.cvlibs.net/datasets/kitti/raw_data.php).
 
 ### Validating installation
 
