@@ -92,16 +92,7 @@ One can run only evaluation using the pretrained models:
 ./train.py +experiments=dd3d_kitti_dla34  EVAL_ONLY=True MODEL.CKPT=<path-to-pretrained-model> TEST.IMS_PER_BATCH=4
 ```
 
-## Models
 
-All experiments here use 8 A100 40G GPUs, and use gradient accumulation when more GPU memory is needed. We subsample nuScenes validation set by a factor of 8 (2Hz ⟶ 0.25Hz) to save training time.
-
-### KITTI
-
-|                     experiment                      | backbone | train mem. (GB) | train time (hr) |                                                  train log                                                  | Box AP (%) | BEV AP (%) |                                                     download                                                     |
-| :-------------------------------------------------: | :------: | :-------------: | :-------------: | :---------------------------------------------------------------------------------------------------------: | :--------: | :--------: | :--------------------------------------------------------------------------------------------------------------: |
-| [config](configs/experiments/dd3d_kitti_dla34.yaml) |  DLA-34  |       256       |       4.5       | [log](https://tri-ml-public.s3.amazonaws.com/github/dd3d/experiments/26675chm-20210826_083148/logs/log.txt) |   16.92    |   24.77    | [model](https://tri-ml-public.s3.amazonaws.com/github/dd3d/experiments/26675chm-20210826_083148/model_final.pth) |
-|  [config](configs/experiments/dd3d_kitti_v99.yaml)  |  V2-99   |       400       |       9.0       | [log](https://tri-ml-public.s3.amazonaws.com/github/dd3d/experiments/4elbgev2-20210825_201852/logs/log.txt) |   23.90    |   32.01    | [model](https://tri-ml-public.s3.amazonaws.com/github/dd3d/experiments/4elbgev2-20210825_201852/model_final.pth) |
 
 ## License
 
